@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"	
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+
+    <context:component-scan base-package="edu.neumont.csc380"/>
+    
+    <bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+    	<property name="produceMediaTypes">
+    		<list>
+    			<value>application/json</value>
+    			<value>application/vnd.neumont.auth.edu-v1+json</value>
+    		</list>
+    	</property>
+    	<property name="ignoreNamespaces" value="true"></property>
+    </bean>
+	
+    <jaxrs:server id="jaxrsService" address="/">
+       <jaxrs:serviceBeans>
+	      <ref bean="IAuthenticationService"/>
+	      <ref bean="IAuthorizationService"/>
+	   </jaxrs:serviceBeans>
+	   <jaxrs:providers>
+	   	  <ref bean="jsonProvider"/>
+	   	  <ref bean="invalidPasswordOrUserExceptionMapper"/>
+	   	  <ref bean="noIDExceptionMapper"/>
+	   	  <ref bean="noPasswordExceptionMapper"/>
+	   	  <ref bean="noRequestLevelExceptionMapper"/>
+	   	  <ref bean="noUserFoundExceptionMapper"/>
+	   	  <ref bean="passwordPreviouslyUsedExceptionMapper"/>
+	   	  <ref bean="tokenExpiredExceptionMapper"/>
+	   	  <ref bean="tokenInvalidExceptionMapper"/>
+	   	  <ref bean="tokenMissingExceptionMapper"/>
+	   	  <ref bean="tokenRemovedExceptionMapper"/>
+	   </jaxrs:providers>
+	</jaxrs:server>
+</beans>
