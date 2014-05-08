@@ -16,7 +16,6 @@ public class ProfileRequestHandler implements RequestHandler {
 		System.out.println("message.size: " + message.size());
 		String requestMethod = (String) message.get(message.HTTP_REQUEST_METHOD);
 		
-		
 		TreeMap<String,Object> thisThing =  (TreeMap<String, Object>) message.get(message.PROTOCOL_HEADERS);
 		System.out.println("thisThing: "+thisThing);
 		
