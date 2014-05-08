@@ -16,7 +16,7 @@ public class HelloWorldServiceImpl implements ImageService, VideoService {
 	private Long sequenceId = 1L;
 	
 	public Response getImage(Long id)
-	{
+	{		
 		Image i = images.get(id);
 		if(i == null)
 		{

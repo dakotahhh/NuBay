@@ -7,7 +7,7 @@ import javax.ws.rs.core.Response;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
 import org.apache.cxf.jaxrs.provider.json.JSONProvider;
 
-import edu.neumont.csc380.AuthServer.AuthPayload;
+import client.client.AuthPayload;
 import edu.neumont.csc380.AuthServer.Credentials;
 import edu.neumont.csc380.AuthServer.IAuthenticationService;
 import edu.neumont.csc380.AuthServer.IAuthorizationService;
@@ -101,6 +101,7 @@ public class AuthClient {
 				}
 			} 
 		} catch (Exception e) {
+			e.printStackTrace();
 			result = new AuthResponse(400, e.toString() + " -- " + e.getCause() + " -- " + e.getMessage() + " -- " + e.getLocalizedMessage());
 		}
 		return result;

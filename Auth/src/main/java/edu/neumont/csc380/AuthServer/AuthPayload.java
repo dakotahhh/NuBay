@@ -2,6 +2,8 @@ package edu.neumont.csc380.AuthServer;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import edu.neumont.csc380.AuthServer.RequestLevel;
+
 @XmlRootElement(name = "userInfo")
 public class AuthPayload {
 	String id;
