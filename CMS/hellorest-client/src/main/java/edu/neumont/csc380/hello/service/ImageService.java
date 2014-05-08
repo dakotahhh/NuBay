@@ -2,8 +2,6 @@ package edu.neumont.csc380.hello.service;
 
 import java.io.File;
 
-import javax.annotation.security.PermitAll;
-import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -19,29 +17,35 @@ import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 import edu.neumont.csc380.hello.service.Image;
 
 @Path("/image")
-@PermitAll
+//@PermitAll
 public interface ImageService {
 
 	@GET
 	@Path("/{id")
-	@Produces("multipart/mixed")
-	Response getImage(@PathParam("id") Long id);
-	
+	@Consumes("application/json")
+	@Produces("application/json")
+//	@Produces("multipart/mixed")
+	Response getImage(@PathParam("id") Long id, Image image);
+
 	@PUT
 	@Path("/{id}")
-	@RolesAllowed("ImageOwner")
-	@Consumes({"multipart/mixed"})
+//	@RolesAllowed("ImageOwner")
+	@Consumes("application/json")
+//	@Consumes("multipart/mixed")
 	@Produces("application/json")
-	Response updateImage(@PathParam("id") Long id, @Multipart(value = "imageData") Image imageData, @Multipart(value = "imageFile") File imageFile);
-	
+	Response updateImage(@PathParam("id") Long id, Image imageData);
+//	Response updateImage(@PathParam("id") Long id, @Multipart(value = "imageData") Image imageData, @Multipart(value = "imageFile") File imageFile);
+
 	@POST
-	@Consumes("multipart/mixed")
+	@Consumes("application/json")
+//	@Consumes("multipart/mixed")
 	@Produces("application/json")
-	Response createImage(@Multipart(value = "imageData") Image imageData, @Multipart(value = "imageFile") File imageFile);
-	
+	Response createImage(Image imageData);
+//	Response createImage(@Multipart(value = "imageData") Image imageData, @Multipart(value = "imageFile") File imageFile);
+
 	@DELETE
 	@Path("/{id}")
-	@RolesAllowed("ImageOwner")
+//	@RolesAllowed("ImageOwner")
 	Response deleteImage(@PathParam("id") Long id);
 
 }

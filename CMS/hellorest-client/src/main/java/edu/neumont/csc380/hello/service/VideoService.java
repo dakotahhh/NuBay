@@ -1,7 +1,7 @@
 package edu.neumont.csc380.hello.service;
 
-import javax.annotation.security.PermitAll;
-import javax.annotation.security.RolesAllowed;
+//import javax.annotation.security.PermitAll;
+//import javax.annotation.security.RolesAllowed;
 import java.io.File;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -18,29 +18,36 @@ import org.apache.cxf.jaxrs.ext.multipart.MultipartBody;
 
 
 @Path("/video")
-@PermitAll
+//@PermitAll
 public interface VideoService {
 
 	@GET
 	@Path("/{id}")
-	@Produces("multipart/mixed")
-	Response getVideo(@PathParam("id") Long id);
-	
+	@Consumes("application/json")
+	@Produces("application/json")
+//	@Produces("multipart/mixed")
+	Response getVideo(@PathParam("id") Long id, Video video);
+
 	@PUT
 	@Path("/{id}")
-	@RolesAllowed("VideoOwner")
-	@Consumes({"multipart/mixed"})
+//	@RolesAllowed("VideoOwner")
+	@Consumes("application/json")
+//	@Consumes("multipart/mixed")
+//	@Consumes({"video/quicktime", "video/avi", "video/mp4"})
 	@Produces("application/json")
-	Response updateVideo(@PathParam("id") Long id, @Multipart(value = "videoData") Video videoData, @Multipart(value = "videoFile") File videoFile);
-	
+	Response updateVideo(@PathParam("id") Long id, Video videoData);
+//	Response updateVideo(@PathParam("id") Long id, @Multipart(value = "videoData") Video videoData, @Multipart(value = "videoFile") File videoFile);
+
 	@POST
-	@Consumes("multipart/mixed")
+	@Consumes("application/json")
+//	@Consumes("multipart/mixed")
 	@Produces("application/json")
-	Response createVideo(@Multipart(value = "videoData") Video videoData, @Multipart(value = "videoFile") File videoFile);
-	
+	Response createVideo(Video videoData);
+//	Response createVideo(@Multipart(value = "videoData") Video videoData, @Multipart(value = "videoFile") File videoFile);
+
 	@DELETE
 	@Path("/{id}")
-	@RolesAllowed("VideoOwner")
+//	@RolesAllowed("VideoOwner")
 	Response deleteVideo(@PathParam("id") Long id);
 
 }
