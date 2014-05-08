@@ -21,6 +21,11 @@
   <artifactId>Non-MavenObjectsProfileAPI</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   </dependency>
+  <dependency>
+  	 <groupId>edu.neumont.csc380</groupId>
+	  <artifactId>authorization</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
     <dependency>
 		<groupId>org.apache.cxf</groupId>
 		<artifactId>cxf-rt-frontend-jaxrs</artifactId>
