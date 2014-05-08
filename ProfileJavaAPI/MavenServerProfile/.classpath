@@ -23,7 +23,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/nredmond/git/NuBa/ProfileJavaAPI/MavenServerProfile/AuthClientNickNormDavid.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nredmond/git/NuBa/ProfileJavaAPI/MavenServerProfile/AuthServerNickNormDavid.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
