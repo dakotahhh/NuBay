@@ -7,11 +7,11 @@ public class Profile {
 
 	private int userID;
 	private String name;
-//	private Image userImage; 
+ 
 	private String email;
 	private int userRating;
 	private Location location;
-	
+	private String password;
 	
 	public int getUserID() {
 		return userID;
@@ -43,6 +43,14 @@ public class Profile {
 	public void setUserRating(int userRating) {
 		this.userRating = userRating;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	
 	/**
 	 * service level user and password for sending auth the userid and password

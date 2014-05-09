@@ -7,7 +7,7 @@ import javax.ws.rs.core.Response;
 
 import org.apache.cxf.jaxrs.model.wadl.ElementClass;
 
-import client.client.AuthPayload;
+import edu.neumont.csc380.AuthServer.AuthPayload;
 
 @Path("/authenticate")
 public interface IAuthenticationService {

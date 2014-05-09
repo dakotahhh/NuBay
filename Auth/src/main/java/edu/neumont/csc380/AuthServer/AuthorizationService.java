@@ -4,7 +4,7 @@ import javax.ws.rs.core.Response;
 
 import org.springframework.stereotype.Service;
 
-import client.client.AuthPayload;
+import edu.neumont.csc380.AuthServer.AuthPayload;
 import edu.neumont.csc380.Database.AuthorizationToken;
 import edu.neumont.csc380.Database.DataBase;
 import edu.neumont.csc380.Database.User;

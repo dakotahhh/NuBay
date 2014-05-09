@@ -2,7 +2,7 @@ package edu.neumont.csc380.AuthClient;
 
 import javax.ws.rs.core.Response;
 
-import client.client.AuthPayload;
+import edu.neumont.csc380.AuthServer.AuthPayload;
 import edu.neumont.csc380.AuthServer.Credentials;
 import edu.neumont.csc380.AuthServer.IAuthenticationService;
 import edu.neumont.csc380.AuthServer.IAuthorizationService;

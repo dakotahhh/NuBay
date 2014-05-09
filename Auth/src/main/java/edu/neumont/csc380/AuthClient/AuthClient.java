@@ -7,7 +7,7 @@ import javax.ws.rs.core.Response;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
 import org.apache.cxf.jaxrs.provider.json.JSONProvider;
 
-import client.client.AuthPayload;
+import edu.neumont.csc380.AuthServer.AuthPayload;
 import edu.neumont.csc380.AuthServer.Credentials;
 import edu.neumont.csc380.AuthServer.IAuthenticationService;
 import edu.neumont.csc380.AuthServer.IAuthorizationService;
