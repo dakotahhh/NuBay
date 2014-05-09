@@ -34,6 +34,7 @@ public class ProfileClient {
 		Profile profile = new Profile();
 		profile.setName("ZAD-Man");
 		profile.setEmail("goobers@gmail.com");
+		profile.setPassword("securePassword");
 		Location loc = new Location();
 		loc.setCity("Sandy");
 		loc.setOwnerID(99);
