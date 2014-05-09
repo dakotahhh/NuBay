@@ -6,6 +6,9 @@
         <dependent-module archiveName="Non-MavenObjectsProfileAPI-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Non-MavenObjectsProfileAPI/Non-MavenObjectsProfileAPI">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="authorization-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/authorization/authorization">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="MavenServerProfile"/>
         <property name="java-output-path" value="/MavenServerProfile/target/classes"/>
     </wb-module>
